@@ -1,18 +1,30 @@
-﻿
+﻿using System;
+using System.Collections;
 public class Cap6y7{
 
     public static void Main(String[] args)
     {
         System.Console.WriteLine( "El promedio del arreglo es:" + AverageArray());
-        System.Console.WriteLine("El numero mayor es: " + YougerArray());  
-        System.Console.WriteLine("El numero menor es: "+ OldestArray()); 
+        System.Console.WriteLine("El numero menor es: " + YougerArray());  
+        System.Console.WriteLine("El numero mayor es: "+ OldestArray()); 
 
         int[][] jagged = new int[2][];
         jagged [0] = new int[3]{5,6,7};
         jagged [1] = new int[2]{20,30};
 
-        System.Console.WriteLine("El arreglo Jagged -->");
+        System.Console.WriteLine("El arreglo Jagged--> ");
         Sum(jagged);
+
+        //ArrayList
+        ArrayList qualification = new ArrayList();
+        qualification.Add(90);
+        qualification.Add(60);
+        qualification.Add(80); 
+
+        
+
+        System.Console.WriteLine("La calificacion maxima es: "+ QualificationMax(qualification));
+        System.Console.WriteLine("La calificacion minima es: "+ QualificationMin(qualification));
     }
 
     public static double AverageArray()
@@ -96,6 +108,36 @@ public class Cap6y7{
                 System.Console.Write(jagged[i][j] + ",");
             }
         }    
+    }
+
+    public static int QualificationMax(ArrayList qualification)
+    {
+        int olderList = 0;
+        for(int i=0; i< qualification.Count; i++)
+        {
+            int num = (int)qualification[i];
+            if( num > olderList)
+            {
+                olderList = num;
+            }
+        }
+        return olderList;
+        
+    }
+
+    public static int QualificationMin(ArrayList qualification)
+    {
+        int yougerList = (int)qualification[0];
+        for(int i=0; i< qualification.Count; i++)
+        {
+            int num = (int)qualification[i];
+            if( num < yougerList)
+            {
+                yougerList = num;
+            }
+        }
+        return yougerList;
+        
     }
 
 }
