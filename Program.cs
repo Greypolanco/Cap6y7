@@ -5,7 +5,7 @@ public class Cap6y7{
     {
         System.Console.WriteLine( "El promedio del arreglo es:" + AverageArray());
         System.Console.WriteLine("El numero mayor es: " + YougerArray());  
-
+        System.Console.WriteLine("El numero menor es: "+ OldestArray()); 
     }
 
     public static double AverageArray()
@@ -54,6 +54,30 @@ public class Cap6y7{
             }
         }
         return youger;
+    }
+
+    public  static int OldestArray()
+    {
+        int[][] jagged = new int[4][];
+
+        jagged [0]= new int[4]{1,2,3,4};
+        jagged [1]= new int[4]{6,7,9,8};
+        jagged [2]= new int[4]{65,23,87,21};
+        jagged [3]= new int[2]{32,21};
+
+        int older = jagged[0][1];
+        for(int i=0; i<jagged.Length; i++)
+        {
+            for(int j=0; j<jagged[i].Length; j++)
+            {
+                if(jagged[i][j] > older)
+                {
+                    older = jagged[i][j];
+                }
+            }
+            
+        }
+        return older;
     }
 
 
